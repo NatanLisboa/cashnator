@@ -15,8 +15,8 @@ public class TransactionDTO {
 
     private BigDecimal value;
 
-    private Long payer;
+    private Long payerId;
 
-    private Long payee;
+    private Long payeeId;
 
 }

@@ -10,8 +10,8 @@ public class TransactionInputDisassembler {
     public Transaction toDomainObject(TransactionInput transactionInput) {
         return Transaction.builder()
                 .value(transactionInput.getValue())
-                .payer(transactionInput.getPayer())
-                .payee(transactionInput.getPayee())
+                .payerId(transactionInput.getPayerId())
+                .payeeId(transactionInput.getPayeeId())
                 .build();
     }
 

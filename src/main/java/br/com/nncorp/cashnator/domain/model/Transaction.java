@@ -1,9 +1,6 @@
 package br.com.nncorp.cashnator.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -21,10 +18,21 @@ public class Transaction {
     @EqualsAndHashCode.Include
     private Long id;
 
+    @Column(nullable = false)
     private BigDecimal value;
 
-    private Long payer;
+    @Column(name = "payer_id", nullable = false)
+    private Long payerId;
 
-    private Long payee;
+    @Column(name = "payee_id", nullable = false)
+    private Long payeeId;
+
+    @OneToOne
+    @JoinColumn(name = "payer_id", nullable = false, insertable = false, updatable = false)
+    private User payer;
+
+    @OneToOne
+    @JoinColumn(name = "payee_id", nullable = false, insertable = false, updatable = false)
+    private User payee;
 
 }

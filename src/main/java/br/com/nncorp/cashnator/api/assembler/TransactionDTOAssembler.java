@@ -11,8 +11,8 @@ public class TransactionDTOAssembler {
         return TransactionDTO.builder()
                 .id(transaction.getId())
                 .value(transaction.getValue())
-                .payer(transaction.getPayer())
-                .payee(transaction.getPayee())
+                .payerId(transaction.getPayerId())
+                .payeeId(transaction.getPayeeId())
                 .build();
     }
 
