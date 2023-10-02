@@ -8,6 +8,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @Setter
@@ -28,5 +30,7 @@ public class User {
     private String password;
 
     private UserType type;
+
+    private BigDecimal balance;
 
 }
